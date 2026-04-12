@@ -1,0 +1,21 @@
+{
+  "name": "Tomorrow AI",
+  "short_name": "Tomorrow AI",
+  "description": "Automatisation pour PME et Artisans",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1F3A",
+  "theme_color": "#0B1F3A",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/8gKtxIh.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.imgur.com/8gKtxIh.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

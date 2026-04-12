@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3A">
+<meta name="description" content="Tomorrow AI — Automatisation pour PME et Artisans">
+<title>Tomorrow AI — Automatisation pour PME</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root {
+  --navy: #0B1F3A;
+  --navy-mid: #0E2748;
+  --navy-card: #122E52;
+  --yellow: #FFD84D;
+  --white: #FFFFFF;
+  --blue-light: #B0C4DE;
+  --text-muted: #7A9BBF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy); color: var(--white); font-family: system-ui, sans-serif; font-size: 18px; line-height: 1.6; overflow-x: hidden; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(11,31,58,0.97); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.nav-logo img { height: 56px; width: auto; object-fit: contain; }
+.nav-cta { background: var(--yellow); color: #000; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; }
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 60px 80px; max-width: 1200px; margin: 0 auto; gap: 60px; }
+.hero-left { flex: 1; }
+.hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,216,77,0.12); border: 1px solid rgba(255,216,77,0.3); color: var(--yellow); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 32px; }
+.hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+.hero h1 span { color: var(--yellow); }
+.hero p { font-size: 18px; color: var(--blue-light); margin-bottom: 40px; max-width: 480px; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary { background: var(--yellow); color: #000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-block; }
+.btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-size: 16px; display: inline-block; }
+.hero-stats { display: flex; flex-direction: column; gap: 24px; }
+.stat-card { background: var(--navy-card); border-radius: 16px; padding: 28px 32px; border: 1px solid rgba(255,216,77,0.15); text-align: center; }
+.stat-number { font-size: 42px; font-weight: 800; color: var(--yellow); line-height: 1; margin-bottom: 8px; }
+.stat-label { color: var(--blue-light); font-size: 14px; }
+.section-dark { background: var(--navy-mid); }
+.inner { max-width: 1200px; margin: 0 auto; padding: 100px 60px; }
+.section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 16px; }
+h2 { font-size: 40px; font-weight: 800; margin-bottom: 48px; }
+.cards-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.card { background: var(--navy-card); border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.05); }
+.card-icon { font-size: 28px; margin-bottom: 16px; }
+.card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.card p { color: var(--blue-light); font-size: 15px; }
+.solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.solution-left p { color: var(--blue-light); margin-bottom: 32px; }
+.benefits { display: flex; flex-direction: column; gap: 16px; }
+.benefit { display: flex; align-items: center; gap: 16px; background: rgba(255,216,77,0.08); border-radius: 10px; padding: 16px 20px; border: 1px solid rgba(255,216,77,0.15); }
+.benefit-icon { font-size: 22px; }
+.benefit-text { font-weight: 500; }
+.quote-box { background: var(--navy-card); border-radius: 16px; padding: 40px; border: 1px solid rgba(255,216,77,0.15); text-align: center; }
+.quote-box .tagline { font-size: 22px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
+.quote-box .author { color: var(--blue-light); font-size: 15px; }
+.packs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.pack-card { background: var(--navy-card); border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+.pack-card.featured { border-color: var(--yellow); }
+.pack-card.featured::before { content: '⭐ Populaire'; position: absolute; top: 16px; right: 16px; background: var(--yellow); color: #000; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; }
+.pack-icon { font-size: 32px; margin-bottom: 16px; }
+.pack-name { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.pack-desc { color: var(--blue-light); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+.steps { display: flex; justify-content: center; gap: 0; align-items: flex-start; margin-top: 60px; }
+.step { flex: 1; text-align: center; padding: 0 24px; }
+.step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--yellow); color: #000; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.step h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.step p { color: var(--blue-light); font-size: 15px; }
+.cta-box { background: var(--navy-card); border-radius: 16px; padding: 60px; text-align: center; border: 1px solid rgba(255,216,77,0.2); max-width: 700px; margin: 0 auto; }
+.cta-box h2 { margin-bottom: 16px; font-size: 34px; }
+.cta-box p { color: var(--blue-light); margin-bottom: 40px; }
+footer { text-align: center; padding: 40px 60px; color: var(--text-muted); font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
+footer a { color: var(--yellow); text-decoration: none; }
+@media (max-width: 768px) {
+  nav { padding: 12px 20px; }
+  .nav-logo img { height: 44px; }
+  .nav-cta { padding: 8px 16px; font-size: 13px; }
+  .hero { flex-direction: column; padding: 100px 24px 60px; text-align: center; gap: 40px; }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 16px; margin: 0 auto 32px; }
+  .hero-buttons { justify-content: center; flex-direction: column; align-items: center; }
+  .hero-right { width: 100%; }
+  .hero-stats { flex-direction: row; justify-content: center; gap: 16px; }
+  .stat-card { padding: 20px; flex: 1; }
+  .stat-number { font-size: 28px; }
+  .inner { padding: 60px 24px; }
+  h2 { font-size: 28px; margin-bottom: 32px; }
+  .cards-3 { grid-template-columns: 1fr; gap: 16px; }
+  .solution-grid { grid-template-columns: 1fr; gap: 40px; }
+  .packs-grid { grid-template-columns: 1fr; gap: 16px; }
+  .steps { flex-direction: column; gap: 32px; align-items: center; }
+  .step { max-width: 300px; }
+  .cta-box { padding: 40px 24px; }
+  .cta-box h2 { font-size: 26px; }
+  footer { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="logo.svg" alt="Tomorrow AI">
+  </div>
+  <a href="https://calendly.com/buddy34000/30min" target="_blank" class="nav-cta">Réserver un appel gratuit</a>
+</nav>
+
+<div style="background:var(--navy)">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">⚡ Automatisation pour PME & Artisans</div>
+      <h1>Automatisez votre business <span>sans prise de tête</span></h1>
+      <p>Je mets en place des automatisations simples qui travaillent pour vous 24h/24 — devis, relances, facturation, prospection.</p>
+      <div class="hero-buttons">
+        <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary">Demander un devis gratuit</a>
+        <a href="#packs" class="btn-secondary">Voir les packs →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-number">2h</div><div class="stat-label">gagnées par jour en moyenne</div></div>
+        <div class="stat-card"><div class="stat-number">48h</div><div class="stat-label">pour tout mettre en place</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">votre business tourne seul</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-dark">
+  <div class="inner">
+    <div class="section-label">Le problème</div>
+    <h2>Vous perdez du temps tous les jours sur des tâches répétitives</h2>
+    <div class="cards-3">
+      <div class="card"><div class="card-icon">❌</div><h3>Devis manuels</h3><p>Vous passez des heures à rédiger des devis à la main, un par un, pour chaque client.</p></div>
+      <div class="card"><div class="card-icon">❌</div><h3>Relances oubliées</h3><p>Vous oubliez de relancer les prospects ou les clients qui n'ont pas répondu.</p></div>
+      <div class="card"><div class="card-icon">❌</div><h3>Tâches chronophages</h3><p>La facturation, les suivis, les emails — tout ça vous prend un temps précieux.</p></div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--navy)">
+  <div class="inner">
+    <div class="solution-grid">
+      <div class="solution-left">
+        <div class="section-label">La solution</div>
+        <h2>Je m'occupe de tout pour vous</h2>
+        <p>J'installe des systèmes qui travaillent à votre place. Une fois en place, tout tourne automatiquement — vous n'avez plus à y penser.</p>
+        <div class="benefits">
+          <div class="benefit"><div class="benefit-icon">⚡</div><div class="benefit-text">Gain de temps immédiat dès la première semaine</div></div>
+          <div class="benefit"><div class="benefit-icon">📈</div><div class="benefit-text">Plus de clients grâce à la prospection automatique</div></div>
+          <div class="benefit"><div class="benefit-icon">🧠</div><div class="benefit-text">Moins de charge mentale, plus de focus sur votre métier</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="quote-box">
+          <div style="font-size:48px;margin-bottom:20px">🤖</div>
+          <div class="tagline">Automatiser aujourd'hui,<br>la liberté demain.</div>
+          <div class="author" style="margin-top:16px">Thomas Monnier<br>Fondateur — Tomorrow AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-dark" id="packs">
+  <div class="inner">
+    <div class="section-label">Mes packs</div>
+    <h2>Concrètement, voilà ce que je peux automatiser</h2>
+    <div class="packs-grid">
+      <div class="pack-card"><div class="pack-icon">📄</div><div class="pack-name">Pack Devis Automatique</div><div class="pack-desc">Un prospect remplit un formulaire → il reçoit un devis PDF professionnel en 2 minutes. Relances automatiques incluses.</div><a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:14px;padding:12px 24px">Demander un devis gratuit</a></div>
+      <div class="pack-card"><div class="pack-icon">💰</div><div class="pack-name">Pack Facturation</div><div class="pack-desc">Dès qu'une mission est terminée → facture générée et envoyée automatiquement. Archivage Google Drive inclus.</div><a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:14px;padding:12px 24px">Demander un devis gratuit</a></div>
+      <div class="pack-card"><div class="pack-icon">🎯</div><div class="pack-name">Pack Prospection</div><div class="pack-desc">Trouvez des prospects qualifiés et envoyez-leur des emails personnalisés par IA automatiquement.</div><a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:14px;padding:12px 24px">Demander un devis gratuit</a></div>
+      <div class="pack-card featured"><div class="pack-icon">🚀</div><div class="pack-name">Pack Entreprise Autonome</div><div class="pack-desc">La suite complète : devis + facturation + relances + avis Google + prospection + réseaux sociaux. Votre entreprise tourne seule.</div><a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:14px;padding:12px 24px">Demander un devis gratuit</a></div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--navy)">
+  <div class="inner" style="text-align:center">
+    <div class="section-label">Comment ça marche</div>
+    <h2>Simple, rapide, efficace</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>On échange 20 minutes</h3><p>On analyse ensemble vos tâches répétitives et ce qu'on peut automatiser en priorité.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Je mets en place</h3><p>Je construis et teste tout. Vous n'avez rien à faire, juste à valider le résultat.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Vous gagnez du temps</h3><p>Le système tourne 24h/24. Vous vous concentrez sur votre cœur de métier.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-dark">
+  <div class="inner">
+    <div class="cta-box">
+      <h2>Arrêtez de perdre du temps.<br>Automatisez dès aujourd'hui.</h2>
+      <p>Je vous propose un appel gratuit de 20 minutes pour voir exactement ce qu'on peut automatiser dans votre business.</p>
+      <a href="https://calendly.com/buddy34000/30min" target="_blank" class="btn-primary" style="font-size:18px;padding:20px 48px">Réserver mon appel gratuit</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Tomorrow AI — Thomas Monnier | <a href="mailto:thomas@tomorrowai.fr">thomas@tomorrowai.fr</a> | 07 45 15 14 63</p>
+  <p style="margin-top:8px;font-size:12px">Automatiser aujourd'hui, la liberté demain.</p>
+</footer>
+
+</body>
+</html>
