@@ -1,85 +1,382 @@
 <!DOCTYPE html>
-  }
-
-  .cards-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .inner {
-    padding: 60px 24px;
-  }
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3A">
+<meta name="description" content="Tomorrow AI — Automatisation pour PME et
+Artisans">
+<title>Tomorrow AI — Automatisation pour PME</title>
+<link rel="manifest" href="manifest.json">
+<style>
+:root {
+--navy: #0B1F3A;
+--navy-mid: #0E2748;
+--navy-card: #122E52;
+--yellow: #FFD84D;
+--white: #FFFFFF;
+--blue-light: #B0C4DE;
+--text-muted: #7A9BBF;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+background: var(--navy);
+color: var(--white);
+font-family: system-ui, sans-serif;
+font-size: 18px;
+line-height: 1.6;
+1
+overflow-x: hidden;
+}
+nav {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 100;
+padding: 12px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: rgba(11,31,58,0.97);
+border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo img {
+height: 56px;
+width: auto;
+object-fit: contain;
+}
+.nav-cta {
+background: var(--yellow);
+color: #000;
+padding: 10px 24px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 700;
+font-size: 15px;
+white-space: nowrap;
+}
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+padding: 120px 60px 80px;
+max-width: 1200px;
+margin: 0 auto;
+gap: 60px;
+}
+.hero-left {
+flex: 1;
+}
+.hero-right {
+flex: 1;
+display: flex;
+2
+justify-content: center;
+align-items: center;
+}
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(255,216,77,0.12);
+border: 1px solid rgba(255,216,77,0.3);
+color: var(--yellow);
+padding: 6px 16px;
+border-radius: 100px;
+font-size: 13px;
+font-weight: 600;
+margin-bottom: 32px;
+}
+.hero h1 {
+font-size: 52px;
+font-weight: 800;
+line-height: 1.1;
+margin-bottom: 24px;
+}
+.hero h1 span {
+color: var(--yellow);
+}
+.hero p {
+font-size: 18px;
+color: var(--blue-light);
+margin-bottom: 16px;
+max-width: 480px;
+}
+.hero p.hero-sub {
+font-size: 15px;
+color: var(--text-muted);
+margin-bottom: 40px;
+}
+.hero-buttons {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+}
+.btn-primary {
+background: var(--yellow);
+color: #000;
+3
+padding: 16px 32px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 700;
+font-size: 16px;
+display: inline-block;
+}
+.btn-secondary {
+border: 1px solid rgba(255,255,255,0.3);
+color: var(--white);
+padding: 16px 32px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 16px;
+display: inline-block;
+}
+.hero-stats {
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.stat-card {
+background: var(--navy-card);
+border-radius: 16px;
+padding: 28px 32px;
+border: 1px solid rgba(255,216,77,0.15);
+text-align: center;
+}
+.stat-number {
+font-size: 42px;
+font-weight: 800;
+color: var(--yellow);
+line-height: 1;
+margin-bottom: 8px;
+}
+.stat-label {
+color: var(--blue-light);
+font-size: 14px;
+}
+.section-dark {
+background: var(--navy-mid);
+}
+.inner {
+max-width: 1200px;
+4
+margin: 0 auto;
+padding: 100px 60px;
+}
+.section-label {
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(--yellow);
+margin-bottom: 16px;
+}
+h2 {
+font-size: 40px;
+font-weight: 800;
+margin-bottom: 48px;
+}
+.cards-3 {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 24px;
+}
+.card {
+background: var(--navy-card);
+border-radius: 12px;
+padding: 32px;
+border: 1px solid rgba(255,255,255,0.05);
+}
+.card-icon {
+font-size: 28px;
+margin-bottom: 16px;
+}
+.card h3 {
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+.card p {
+color: var(--blue-light);
+font-size: 15px;
+}
+.packs-grid {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+5
+gap: 24px;
+}
+.pack-card {
+background: var(--navy-card);
+border-radius: 12px;
+padding: 32px;
+border: 1px solid rgba(255,255,255,0.05);
+position: relative;
+overflow: hidden;
+}
+.pack-card.featured {
+border-color: var(--yellow);
+}
+.pack-card.featured::before {
+content: '
+⭐ Populaire';
+position: absolute;
+top: 16px;
+right: 16px;
+background: var(--yellow);
+color: #000;
+font-size: 11px;
+font-weight: 700;
+padding: 4px 12px;
+border-radius: 100px;
+}
+.pack-icon {
+font-size: 32px;
+margin-bottom: 16px;
+}
+.pack-name {
+font-size: 20px;
+font-weight: 800;
+margin-bottom: 8px;
+}
+.pack-desc {
+color: var(--blue-light);
+font-size: 14px;
+margin-bottom: 16px;
+line-height: 1.6;
+}
+.pack-tools {
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+6
+align-items: center;
+margin-top: 18px;
+padding-top: 18px;
+border-top: 1px solid rgba(255,255,255,0.06);
+}
+.tool-logo {
+height: 32px;
+width: auto;
+object-fit: contain;
+transition: transform 0.2s ease;
+}
+}
+.tool-logo:hover {
+transform: scale(1.08);
+@media (max-width: 768px) {
+.packs-grid {
+grid-template-columns: 1fr;
+}
+.hero {
+flex-direction: column;
+padding: 100px 24px 60px;
+text-align: center;
+}
+}
+}
+}
 }
 </style>
 </head>
 <body>
-
+.hero h1 {
+font-size: 32px;
+.cards-3 {
+grid-template-columns: 1fr;
+.inner {
+padding: 60px 24px;
 <nav>
-  <div class="nav-logo">
-    <img src="logo.svg" alt="Tomorrow AI">
-  </div>
-  <a href="https://tally.so/r/7RvaNR" target="_blank" class="nav-cta">Demander un devis</a>
-</nav>
-
-<div class="section-dark" id="packs">
-  <div class="inner">
-    <div class="section-label">Mes packs</div>
-    <h2>Les automatisations que je mets en place</h2>
-
-    <div class="packs-grid">
-
-      <div class="pack-card">
-        <div class="pack-icon">📄</div>
-        <div class="pack-name">Pack Devis</div>
-        <div class="pack-desc">
-          Recevez automatiquement les demandes de devis, envoyez vos propositions instantanément et relancez sans effort.
-        </div>
-
-        <div class="pack-tools">
-          <img src="https://i.ibb.co/n83dXsxt/Tally.png" class="tool-logo" alt="Tally">
-          <img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo" alt="Make">
-          <img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-logo" alt="Airtable">
-          <img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-logo" alt="PDFMonkey">
-          <img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo" alt="Gmail">
-        </div>
-      </div>
-
-      <div class="pack-card">
-        <div class="pack-icon">💰</div>
-        <div class="pack-name">Pack Facturation</div>
-        <div class="pack-desc">
-          Générez et envoyez vos factures automatiquement sans ressaisie.
-        </div>
-
-        <div class="pack-tools">
-          <img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo" alt="Make">
-          <img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-logo" alt="Airtable">
-          <img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-logo" alt="PDFMonkey">
-          <img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo" alt="Gmail">
-          <img src="https://i.ibb.co/NdMc07L1/Google-Drive.png" class="tool-logo" alt="Google Drive">
-        </div>
-      </div>
-
-      <div class="pack-card featured">
-        <div class="pack-icon">🚀</div>
-        <div class="pack-name">Pack Gestion Complète</div>
-        <div class="pack-desc">
-          Automatisez tout votre suivi client : devis, signatures, facturation, relances et avis clients.
-        </div>
-
-        <div class="pack-tools">
-          <img src="https://i.ibb.co/n83dXsxt/Tally.png" class="tool-logo" alt="Tally">
-          <img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo" alt="Make">
-          <img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-logo" alt="Airtable">
-          <img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-logo" alt="PDFMonkey">
-          <img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo" alt="Gmail">
-          <img src="https://i.ibb.co/NdMc07L1/Google-Drive.png" class="tool-logo" alt="Google Drive">
-          <img src="https://i.ibb.co/mCTc2HsC/Calendly.png" class="tool-logo" alt="Calendly">
-        </div>
-      </div>
-
-    </div>
-  </div>
+<div class="nav-logo">
+<img src="logo.svg" alt="Tomorrow AI">
 </div>
-
+<a href="https://tally.so/r/7RvaNR" target="_blank" class="nav-
+cta">Demander un devis</a>
+</nav>
+7
+<div class="section-dark" id="packs">
+<div class="inner">
+<div class="section-label">Mes packs</div>
+<h2>Les automatisations que je mets en place</h2>
+<div class="packs-grid">
+<div class="pack-card">
+<div class="pack-icon">
+📄</div>
+<div class="pack-name">Pack Devis</div>
+<div class="pack-desc">
+Recevez automatiquement les demandes de devis, envoyez vos
+propositions instantanément et relancez sans effort.
+</div>
+<div class="pack-tools">
+<img src="https://i.ibb.co/n83dXsxt/Tally.png" class="tool-logo"
+alt="Tally">
+<img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo"
+alt="Make">
+<img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-
+logo" alt="Airtable">
+logo" alt="PDFMonkey">
+alt="Gmail">
+</div>
+</div>
+<img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-
+<img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo"
+<div class="pack-card">
+<div class="pack-icon">
+💰</div>
+<div class="pack-name">Pack Facturation</div>
+<div class="pack-desc">
+Générez et envoyez vos factures automatiquement sans ressaisie.
+</div>
+<div class="pack-tools">
+<img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo"
+alt="Make">
+<img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-
+logo" alt="Airtable">
+<img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-
+logo" alt="PDFMonkey">
+<img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo"
+alt="Gmail">
+<img src="https://i.ibb.co/NdMc07L1/Google-Drive.png" class="tool-
+logo" alt="Google Drive">
+</div>
+</div>
+8
+<div class="pack-card featured">
+<div class="pack-icon">
+🚀</div>
+<div class="pack-name">Pack Gestion Complète</div>
+<div class="pack-desc">
+Automatisez tout votre suivi client : devis, signatures,
+facturation, relances et avis clients.
+</div>
+<div class="pack-tools">
+<img src="https://i.ibb.co/n83dXsxt/Tally.png" class="tool-logo"
+alt="Tally">
+<img src="https://i.ibb.co/prRVp08L/Make.png" class="tool-logo"
+alt="Make">
+<img src="https://i.ibb.co/TMrxzxWM/Airtable.png" class="tool-
+logo" alt="Airtable">
+<img src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" class="tool-
+logo" alt="PDFMonkey">
+<img src="https://i.ibb.co/FbCDjkS4/Gmail.png" class="tool-logo"
+alt="Gmail">
+<img src="https://i.ibb.co/NdMc07L1/Google-Drive.png" class="tool-
+logo" alt="Google Drive">
+<img src="https://i.ibb.co/mCTc2HsC/Calendly.png" class="tool-
+logo" alt="Calendly">
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
