@@ -59,13 +59,12 @@ h2 { font-size: 40px; font-weight: 800; margin-bottom: 48px; }
 .packs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .pack-card { background: var(--navy-card); border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
 .pack-card.featured { border-color: var(--yellow); }
-.pack-card.featured::before { content: '⭐ Populaire'; position: absolute; top: 16px; right: 16px; background: var(--yellow); color: #000; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; }
+.pack-card.featured::before { content: 'Populaire'; position: absolute; top: 16px; right: 16px; background: var(--yellow); color: #000; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; }
 .pack-icon { font-size: 32px; margin-bottom: 16px; }
 .pack-name { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
 .pack-desc { color: var(--blue-light); font-size: 14px; margin-bottom: 16px; line-height: 1.6; }
-.pack-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
-.tool-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: var(--blue-light); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; }
-.tool-badge img { width: 14px; height: 14px; object-fit: contain; border-radius: 2px; }
+.pack-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+.tool-logo { width: 28px; height: 28px; object-fit: contain; border-radius: 6px; background: rgba(255,255,255,0.08); padding: 4px; }
 .steps { display: flex; justify-content: center; gap: 0; align-items: flex-start; margin-top: 60px; }
 .step { flex: 1; text-align: center; padding: 0 24px; }
 .step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--yellow); color: #000; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
@@ -130,9 +129,9 @@ footer a { color: var(--yellow); text-decoration: none; }
   <div class="hero">
     <div class="hero-left">
       <div class="hero-badge">⚡ Automatisation pour PME & Artisans</div>
-      <h1>Gagnez du temps chaque semaine en automatisant <span>vos devis et votre suivi client</span></h1>
-      <p>J'installe pour votre entreprise un système simple qui envoie automatiquement devis, signatures, factures et relances clients.</p>
-      <p class="hero-sub">Aucune compétence technique nécessaire — tout est mis en place pour vous.</p>
+      <h1>Automatisez votre entreprise avec <span>une IA sur-mesure</span></h1>
+      <p>Devis, factures, relances, emails, documents… j'installe des systèmes qui travaillent à votre place 24h/24.</p>
+      <p class="hero-sub">Sans compétence technique — tout est mis en place pour vous.</p>
       <div class="hero-buttons">
         <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary">Voir la démonstration</a>
         <a href="#packs" class="btn-secondary">Découvrir les packs →</a>
@@ -153,9 +152,9 @@ footer a { color: var(--yellow); text-decoration: none; }
     <div class="section-label">Le problème</div>
     <h2>Vous perdez du temps tous les jours sur des tâches répétitives</h2>
     <div class="cards-3">
-      <div class="card"><div class="card-icon">❌</div><h3>Devis manuels</h3><p>Vous passez des heures à rédiger des devis à la main, un par un, pour chaque client.</p></div>
-      <div class="card"><div class="card-icon">❌</div><h3>Relances oubliées</h3><p>Vous oubliez de relancer les prospects ou les clients qui n'ont pas répondu.</p></div>
-      <div class="card"><div class="card-icon">❌</div><h3>Tâches chronophages</h3><p>La facturation, les suivis, les emails — tout ça vous prend un temps précieux.</p></div>
+      <div class="card"><div class="card-icon">❌</div><h3>Tâches manuelles</h3><p>Devis, factures, emails, relances — vous faites tout à la main alors que tout pourrait être automatique.</p></div>
+      <div class="card"><div class="card-icon">❌</div><h3>Prospects oubliés</h3><p>Vous oubliez de relancer les prospects ou les clients qui n'ont pas répondu.</p></div>
+      <div class="card"><div class="card-icon">❌</div><h3>Charge mentale</h3><p>Le suivi administratif, les documents, les emails — tout ça vous épuise et vous éloigne de votre vrai métier.</p></div>
     </div>
   </div>
 </div>
@@ -166,7 +165,7 @@ footer a { color: var(--yellow); text-decoration: none; }
       <div class="solution-left">
         <div class="section-label">La solution</div>
         <h2>Je m'occupe de tout pour vous</h2>
-        <p>J'installe des systèmes qui travaillent à votre place. Une fois en place, tout tourne automatiquement — vous n'avez plus à y penser.</p>
+        <p>J'installe des systèmes intelligents qui travaillent à votre place. Une fois en place, tout tourne automatiquement — vous n'avez plus à y penser.</p>
         <div class="benefits">
           <div class="benefit"><div class="benefit-icon">⚡</div><div class="benefit-text">Gain de temps immédiat dès la première semaine</div></div>
           <div class="benefit"><div class="benefit-icon">📈</div><div class="benefit-text">Plus de clients grâce aux relances automatiques</div></div>
@@ -192,40 +191,74 @@ footer a { color: var(--yellow); text-decoration: none; }
     <div class="packs-grid">
       <div class="pack-card">
         <div class="pack-icon">📄</div>
-        <div class="pack-name">Pack Devis</div>
-        <div class="pack-desc">Recevez automatiquement les demandes de devis, envoyez vos propositions instantanément et relancez sans effort. Zéro prospect oublié.</div>
+        <div class="pack-name">Pack Vente</div>
+        <div class="pack-desc">Automatisez vos devis, signatures et relances clients sans effort. Zéro prospect oublié.</div>
         <div class="pack-tools">
-          <span class="tool-badge"><img src="logos/Tally.jpeg" alt="Tally">Tally</span>
-          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
-          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
-          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
-          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
+          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
+          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
+          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
+          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
         </div>
       </div>
       <div class="pack-card">
         <div class="pack-icon">💰</div>
-        <div class="pack-name">Pack Facturation</div>
-        <div class="pack-desc">Générez et envoyez vos factures en quelques secondes sans ressaisie. Tout est archivé automatiquement pour votre comptable.</div>
+        <div class="pack-name">Pack Admin</div>
+        <div class="pack-desc">Gérez automatiquement vos factures, emails, documents et archivages. Zéro saisie manuelle.</div>
         <div class="pack-tools">
-          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
-          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
-          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
-          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
-          <span class="tool-badge"><img src="logos/Google Drive.svg" alt="Google Drive">Google Drive</span>
+          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
+          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
+          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
+          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
+          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
         </div>
       </div>
       <div class="pack-card featured">
         <div class="pack-icon">🚀</div>
-        <div class="pack-name">Pack Gestion Complète</div>
-        <div class="pack-desc">Automatisez tout votre suivi client : devis, signature, facturation, relances et avis clients. Votre activité tourne seule.</div>
+        <div class="pack-name">Pack Business IA</div>
+        <div class="pack-desc">Un système intelligent qui connecte tous vos outils et automatise votre activité de A à Z.</div>
         <div class="pack-tools">
-          <span class="tool-badge"><img src="logos/Tally.jpeg" alt="Tally">Tally</span>
-          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
-          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
-          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
-          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
-          <span class="tool-badge"><img src="logos/Google Drive.svg" alt="Google Drive">Google Drive</span>
-          <span class="tool-badge"><img src="logos/Canlendly.svg" alt="Calendly">Calendly</span>
+          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
+          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
+          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
+          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
+          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
+          <img class="tool-logo" src="https://i.ibb.co/mCTc2HsC/Calendly.png" alt="Calendly" title="Calendly">
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">📬</div>
+        <div class="pack-name">Pack Emails & Tri</div>
+        <div class="pack-desc">Triez, classez et répondez à vos emails automatiquement. Plus aucun message important ne passe à la trappe.</div>
+        <div class="pack-tools">
+          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
+          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
+          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+          <img class="tool-logo" src="https://i.ibb.co/svcwn5bJ/Slack-noir.png" alt="Slack" title="Slack">
+          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">🗂️</div>
+        <div class="pack-name">Pack Back-Office</div>
+        <div class="pack-desc">Centralisez vos emails, documents, formulaires et tâches administratives dans un système automatisé.</div>
+        <div class="pack-tools">
+          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
+          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
+          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
+          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
+          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
+          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">🎯</div>
+        <div class="pack-name">Pack Sur Mesure</div>
+        <div class="pack-desc">Vous avez un besoin spécifique ? On analyse ensemble vos tâches répétitives et je construis exactement ce qu'il vous faut.</div>
+        <div style="margin-top:16px;">
+          <a href="https://calendly.com/buddy34000/30min" target="_blank" class="btn-primary" style="font-size:14px;padding:12px 24px;">Réserver un appel gratuit</a>
         </div>
       </div>
     </div>
