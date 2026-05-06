@@ -29,7 +29,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 40
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,216,77,0.12); border: 1px solid rgba(255,216,77,0.3); color: var(--yellow); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 32px; }
 .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
 .hero h1 span { color: var(--yellow); }
-.hero p { font-size: 18px; color: var(--blue-light); margin-bottom: 40px; max-width: 480px; }
+.hero p { font-size: 18px; color: var(--blue-light); margin-bottom: 16px; max-width: 480px; }
+.hero p.hero-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 40px; }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn-primary { background: var(--yellow); color: #000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-block; }
 .btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-size: 16px; display: inline-block; }
@@ -55,13 +56,16 @@ h2 { font-size: 40px; font-weight: 800; margin-bottom: 48px; }
 .quote-box { background: var(--navy-card); border-radius: 16px; padding: 40px; border: 1px solid rgba(255,216,77,0.15); text-align: center; }
 .quote-box .tagline { font-size: 22px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
 .quote-box .author { color: var(--blue-light); font-size: 15px; }
-.packs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.packs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .pack-card { background: var(--navy-card); border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
 .pack-card.featured { border-color: var(--yellow); }
 .pack-card.featured::before { content: '⭐ Populaire'; position: absolute; top: 16px; right: 16px; background: var(--yellow); color: #000; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; }
 .pack-icon { font-size: 32px; margin-bottom: 16px; }
 .pack-name { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-.pack-desc { color: var(--blue-light); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+.pack-desc { color: var(--blue-light); font-size: 14px; margin-bottom: 16px; line-height: 1.6; }
+.pack-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+.tool-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: var(--blue-light); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; }
+.tool-badge img { width: 14px; height: 14px; object-fit: contain; border-radius: 2px; }
 .steps { display: flex; justify-content: center; gap: 0; align-items: flex-start; margin-top: 60px; }
 .step { flex: 1; text-align: center; padding: 0 24px; }
 .step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--yellow); color: #000; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
@@ -70,6 +74,9 @@ h2 { font-size: 40px; font-weight: 800; margin-bottom: 48px; }
 .cta-box { background: var(--navy-card); border-radius: 16px; padding: 60px; text-align: center; border: 1px solid rgba(255,216,77,0.2); max-width: 700px; margin: 0 auto; }
 .cta-box h2 { margin-bottom: 16px; font-size: 34px; }
 .cta-box p { color: var(--blue-light); margin-bottom: 40px; }
+.video-placeholder { background: rgba(18,46,82,0.6); border-radius: 16px; border: 2px dashed rgba(255,216,77,0.25); padding: 80px 40px; text-align: center; max-width: 720px; margin: 0 auto 40px; }
+.video-placeholder .play-icon { font-size: 56px; margin-bottom: 16px; opacity: 0.5; }
+.video-placeholder p { color: var(--text-muted); font-size: 15px; }
 footer { text-align: center; padding: 40px 60px; color: var(--text-muted); font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
 footer a { color: var(--yellow); text-decoration: none; }
 .footer-links { margin-top: 12px; display: flex; justify-content: center; gap: 24px; }
@@ -89,7 +96,8 @@ footer a { color: var(--yellow); text-decoration: none; }
   .nav-cta { padding: 8px 16px; font-size: 13px; }
   .hero { flex-direction: column; padding: 100px 24px 60px; text-align: center; gap: 40px; }
   .hero h1 { font-size: 32px; }
-  .hero p { font-size: 16px; margin: 0 auto 32px; }
+  .hero p { font-size: 16px; margin: 0 auto 16px; }
+  .hero p.hero-sub { margin: 0 auto 32px; }
   .hero-buttons { justify-content: center; flex-direction: column; align-items: center; }
   .hero-right { width: 100%; }
   .hero-stats { flex-direction: row; justify-content: center; gap: 16px; }
@@ -115,25 +123,26 @@ footer a { color: var(--yellow); text-decoration: none; }
   <div class="nav-logo">
     <img src="logo.svg" alt="Tomorrow AI">
   </div>
-  <a href="https://calendly.com/buddy34000/30min" target="_blank" class="nav-cta">Réserver un appel gratuit</a>
+  <a href="https://tally.so/r/7RvaNR" target="_blank" class="nav-cta">Demander un devis</a>
 </nav>
 
 <div style="background:var(--navy)">
   <div class="hero">
     <div class="hero-left">
       <div class="hero-badge">⚡ Automatisation pour PME & Artisans</div>
-      <h1>Automatisez votre business <span>sans prise de tête</span></h1>
-      <p>Je mets en place des automatisations simples qui travaillent pour vous 24h/24 — devis, relances, facturation, prospection.</p>
+      <h1>Gagnez du temps chaque semaine en automatisant <span>vos devis et votre suivi client</span></h1>
+      <p>J'installe pour votre entreprise un système simple qui envoie automatiquement devis, signatures, factures et relances clients.</p>
+      <p class="hero-sub">Aucune compétence technique nécessaire — tout est mis en place pour vous.</p>
       <div class="hero-buttons">
-        <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary">Demander un devis gratuit</a>
-        <a href="#packs" class="btn-secondary">Voir les packs →</a>
+        <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary">Voir la démonstration</a>
+        <a href="#packs" class="btn-secondary">Découvrir les packs →</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-stats">
         <div class="stat-card"><div class="stat-number">2h</div><div class="stat-label">gagnées par jour en moyenne</div></div>
         <div class="stat-card"><div class="stat-number">48h</div><div class="stat-label">pour tout mettre en place</div></div>
-        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">votre business tourne seul</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">votre activité tourne seule</div></div>
       </div>
     </div>
   </div>
@@ -160,7 +169,7 @@ footer a { color: var(--yellow); text-decoration: none; }
         <p>J'installe des systèmes qui travaillent à votre place. Une fois en place, tout tourne automatiquement — vous n'avez plus à y penser.</p>
         <div class="benefits">
           <div class="benefit"><div class="benefit-icon">⚡</div><div class="benefit-text">Gain de temps immédiat dès la première semaine</div></div>
-          <div class="benefit"><div class="benefit-icon">📈</div><div class="benefit-text">Plus de clients grâce à la prospection automatique</div></div>
+          <div class="benefit"><div class="benefit-icon">📈</div><div class="benefit-text">Plus de clients grâce aux relances automatiques</div></div>
           <div class="benefit"><div class="benefit-icon">🧠</div><div class="benefit-text">Moins de charge mentale, plus de focus sur votre métier</div></div>
         </div>
       </div>
@@ -178,14 +187,47 @@ footer a { color: var(--yellow); text-decoration: none; }
 <div class="section-dark" id="packs">
   <div class="inner">
     <div class="section-label">Mes packs</div>
-    <h2>Concrètement, voilà ce que je peux automatiser</h2>
+    <h2>Les automatisations que je mets en place</h2>
+    <p style="color:var(--blue-light);font-size:16px;margin-bottom:48px;margin-top:-32px;">Des systèmes simples, concrets et immédiatement utiles pour fluidifier votre activité.</p>
     <div class="packs-grid">
-      <div class="pack-card"><div class="pack-icon">🎯</div><div class="pack-name">Pack Sur Mesure</div><div class="pack-desc">Vous avez un besoin spécifique ? On analyse ensemble vos tâches répétitives et je construis exactement ce qu'il vous faut. Aucune limite.</div><a href="https://calendly.com/buddy34000/30min" target="_blank" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:14px;padding:12px 24px">Réserver un appel gratuit</a></div>
-      <div class="pack-card"><div class="pack-icon">📄</div><div class="pack-name">Pack Devis</div><div class="pack-desc">Un prospect remplit un formulaire → devis PDF professionnel en 2 minutes → signature électronique → relance automatique J+3 si pas de réponse. Zéro prospect oublié.</div></div>
-      <div class="pack-card"><div class="pack-icon">💰</div><div class="pack-name">Pack Facturation</div><div class="pack-desc">Une fois la mission terminée, vous cochez "Mission terminée" dans votre base de données → la facture PDF se génère automatiquement → elle est envoyée au client → archivée dans Google Drive pour votre comptable. Zéro saisie manuelle.</div></div>
-      <div class="pack-card featured"><div class="pack-icon">🚀</div><div class="pack-name">Pack Gestion Complète</div><div class="pack-desc">Tout inclus : devis + signature + relances + facturation auto + avis Google automatiques + relance client 6 mois + archivage comptable Google Drive. Votre business tourne seul.</div></div>
-      <div class="pack-card"><div class="pack-icon">📱</div><div class="pack-name">Pack Réseaux Sociaux</div><div class="pack-desc">Des publications LinkedIn et Instagram générées par IA et publiées automatiquement chaque jour. Restez visible sans y passer du temps.</div></div>
-      <div class="pack-card"><div class="pack-icon">🔍</div><div class="pack-name">Pack Prospection</div><div class="pack-desc">Trouvez automatiquement des clients potentiels dans votre zone et envoyez-leur un message personnalisé par IA. Votre agenda se remplit tout seul.</div></div>
+      <div class="pack-card">
+        <div class="pack-icon">📄</div>
+        <div class="pack-name">Pack Devis</div>
+        <div class="pack-desc">Recevez automatiquement les demandes de devis, envoyez vos propositions instantanément et relancez sans effort. Zéro prospect oublié.</div>
+        <div class="pack-tools">
+          <span class="tool-badge"><img src="logos/Tally.jpeg" alt="Tally">Tally</span>
+          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
+          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
+          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
+          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">💰</div>
+        <div class="pack-name">Pack Facturation</div>
+        <div class="pack-desc">Générez et envoyez vos factures en quelques secondes sans ressaisie. Tout est archivé automatiquement pour votre comptable.</div>
+        <div class="pack-tools">
+          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
+          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
+          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
+          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
+          <span class="tool-badge"><img src="logos/Google Drive.svg" alt="Google Drive">Google Drive</span>
+        </div>
+      </div>
+      <div class="pack-card featured">
+        <div class="pack-icon">🚀</div>
+        <div class="pack-name">Pack Gestion Complète</div>
+        <div class="pack-desc">Automatisez tout votre suivi client : devis, signature, facturation, relances et avis clients. Votre activité tourne seule.</div>
+        <div class="pack-tools">
+          <span class="tool-badge"><img src="logos/Tally.jpeg" alt="Tally">Tally</span>
+          <span class="tool-badge"><img src="logos/Make.svg" alt="Make">Make</span>
+          <span class="tool-badge"><img src="logos/Airtable.svg" alt="Airtable">Airtable</span>
+          <span class="tool-badge"><img src="logos/PDFmonkey.png" alt="PDFMonkey">PDFMonkey</span>
+          <span class="tool-badge"><img src="logos/Gmail.svg" alt="Gmail">Gmail</span>
+          <span class="tool-badge"><img src="logos/Google Drive.svg" alt="Google Drive">Google Drive</span>
+          <span class="tool-badge"><img src="logos/Canlendly.svg" alt="Calendly">Calendly</span>
+        </div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:48px;">
       <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="font-size:16px;padding:18px 40px;">Demander un devis gratuit</a>
@@ -195,21 +237,35 @@ footer a { color: var(--yellow); text-decoration: none; }
 
 <div style="background:var(--navy)">
   <div class="inner" style="text-align:center">
-    <div class="section-label">Comment ça marche</div>
-    <h2>Simple, rapide, efficace</h2>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>On échange 20 minutes</h3><p>On analyse ensemble vos tâches répétitives et ce qu'on peut automatiser en priorité.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Je mets en place</h3><p>Je construis et teste tout. Vous n'avez rien à faire, juste à valider le résultat.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Vous gagnez du temps</h3><p>Le système tourne 24h/24. Vous vous concentrez sur votre cœur de métier.</p></div>
+    <div class="section-label">Voir le système en action</div>
+    <h2>Découvrez comment ça fonctionne</h2>
+    <p style="color:var(--blue-light);font-size:16px;max-width:600px;margin:0 auto 48px;">Découvrez en moins de 2 minutes comment votre entreprise peut automatiser ses devis, relances et factures.</p>
+    <div class="video-placeholder">
+      <div class="play-icon">▶️</div>
+      <p>Démonstration complète du système</p>
     </div>
+    <a href="https://tally.so/r/7RvaNR" target="_blank" class="btn-primary" style="font-size:16px;padding:18px 40px;">Voir la démonstration</a>
   </div>
 </div>
 
 <div class="section-dark">
+  <div class="inner" style="text-align:center">
+    <div class="section-label">Comment ça marche</div>
+    <h2>Comment ça fonctionne</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>On échange 20 minutes</h3><p>On identifie les tâches répétitives qui ralentissent votre activité.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Je configure votre système</h3><p>J'installe et teste chaque automatisation. Vous n'avez rien à faire.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Vous gagnez du temps</h3><p>Votre activité devient plus fluide, plus fiable et mieux structurée.</p></div>
+    </div>
+    <p style="color:var(--text-muted);font-size:14px;margin-top:40px;">Vous n'avez rien à configurer ni aucune compétence technique à avoir.</p>
+  </div>
+</div>
+
+<div style="background:var(--navy)">
   <div class="inner">
     <div class="cta-box">
-      <h2>Arrêtez de perdre du temps.<br>Automatisez dès aujourd'hui.</h2>
-      <p>Je vous propose un appel gratuit de 20 minutes pour voir exactement ce qu'on peut automatiser dans votre business.</p>
+      <h2>Gagnez du temps<br>dès cette semaine.</h2>
+      <p>Réservez un échange gratuit de 20 minutes pour voir quelles tâches peuvent être automatisées dans votre entreprise.</p>
       <a href="https://calendly.com/buddy34000/30min" target="_blank" class="btn-primary" style="font-size:18px;padding:20px 48px">Réserver mon appel gratuit</a>
     </div>
   </div>
@@ -229,6 +285,49 @@ footer a { color: var(--yellow); text-decoration: none; }
     <button class="popup-close" onclick="document.getElementById('popup-mentions').classList.remove('active')">✕</button>
     <h2>Mentions légales</h2>
     <h3>Éditeur du site</h3>
-    <p>Tomorrow AI — Micro-entreprise<br>Thomas Monnier<br>contact@tomorrowai.fr<br>06 45 15 14 63</p>
+    <p>Tomorrow AI — Micro-entreprise<br>Thomas Monnier<br>thomas@tomorrowai.fr<br>06 45 15 14 63</p>
     <h3>Hébergement</h3>
-    <p>Ce site est hébergé par un prestataire tiers. Pour toute question relative à l'hébergement, conta
+    <p>Ce site est hébergé par un prestataire tiers. Pour toute question, contactez-nous à thomas@tomorrowai.fr.</p>
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble du contenu de ce site est la propriété exclusive de Tomorrow AI. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+    <h3>Responsabilité</h3>
+    <p>Tomorrow AI s'efforce de maintenir les informations de ce site à jour et exactes.</p>
+    <h3>Contact</h3>
+    <p>Pour toute question : <a href="mailto:thomas@tomorrowai.fr" style="color:var(--yellow)">thomas@tomorrowai.fr</a></p>
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup-confidentialite">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('popup-confidentialite').classList.remove('active')">✕</button>
+    <h2>Politique de confidentialité</h2>
+    <h3>1. Collecte des données</h3>
+    <p>Nous collectons votre nom, prénom, adresse email et nom d'entreprise via notre formulaire de contact Tally.</p>
+    <h3>2. Utilisation</h3>
+    <p>Ces données sont uniquement utilisées pour répondre à vos demandes de devis et organiser nos échanges.</p>
+    <h3>3. Conservation</h3>
+    <p>Vos données sont conservées pendant une durée de 3 ans maximum après le dernier contact.</p>
+    <h3>4. Partage</h3>
+    <p>Aucune donnée n'est vendue ou partagée avec des tiers.</p>
+    <h3>5. Vos droits</h3>
+    <p>Vous pouvez demander l'accès, la modification ou la suppression de vos données : <a href="mailto:thomas@tomorrowai.fr" style="color:var(--yellow)">thomas@tomorrowai.fr</a></p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.popup-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) overlay.classList.remove('active');
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.popup-overlay.active').forEach(function(o) {
+        o.classList.remove('active');
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
