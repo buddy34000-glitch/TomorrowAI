@@ -64,7 +64,7 @@ h2 { font-size: 40px; font-weight: 800; margin-bottom: 48px; }
 .pack-name { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
 .pack-desc { color: var(--blue-light); font-size: 14px; margin-bottom: 16px; line-height: 1.6; }
 .pack-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
-.tool-logo { width: 28px; height: 28px; object-fit: contain; border-radius: 6px; background: rgba(255,255,255,0.08); padding: 4px; }
+.tool-badge { display: inline-flex; align-items: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: var(--blue-light); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; }
 .steps { display: flex; justify-content: center; gap: 0; align-items: flex-start; margin-top: 60px; }
 .step { flex: 1; text-align: center; padding: 0 24px; }
 .step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--yellow); color: #000; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
@@ -194,11 +194,11 @@ footer a { color: var(--yellow); text-decoration: none; }
         <div class="pack-name">Pack Vente</div>
         <div class="pack-desc">Automatisez vos devis, signatures et relances clients sans effort. Zéro prospect oublié.</div>
         <div class="pack-tools">
-          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
-          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
-          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
-          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
-          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
+          <span class="tool-badge">Tally</span>
+          <span class="tool-badge">Make</span>
+          <span class="tool-badge">Airtable</span>
+          <span class="tool-badge">PDFMonkey</span>
+          <span class="tool-badge">Gmail</span>
         </div>
       </div>
       <div class="pack-card">
@@ -206,12 +206,12 @@ footer a { color: var(--yellow); text-decoration: none; }
         <div class="pack-name">Pack Admin</div>
         <div class="pack-desc">Gérez automatiquement vos factures, emails, documents et archivages. Zéro saisie manuelle.</div>
         <div class="pack-tools">
-          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
-          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
-          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
-          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
-          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
-          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
+          <span class="tool-badge">Make</span>
+          <span class="tool-badge">Airtable</span>
+          <span class="tool-badge">PDFMonkey</span>
+          <span class="tool-badge">Gmail</span>
+          <span class="tool-badge">Google Drive</span>
+          <span class="tool-badge">Google Sheets</span>
         </div>
       </div>
       <div class="pack-card featured">
@@ -219,13 +219,13 @@ footer a { color: var(--yellow); text-decoration: none; }
         <div class="pack-name">Pack Business IA</div>
         <div class="pack-desc">Un système intelligent qui connecte tous vos outils et automatise votre activité de A à Z.</div>
         <div class="pack-tools">
-          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
-          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
-          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
-          <img class="tool-logo" src="https://i.ibb.co/1G1L2q42/PDFmonkey.png" alt="PDFMonkey" title="PDFMonkey">
-          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
-          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
-          <img class="tool-logo" src="https://i.ibb.co/mCTc2HsC/Calendly.png" alt="Calendly" title="Calendly">
+          <span class="tool-badge">Tally</span>
+          <span class="tool-badge">Make</span>
+          <span class="tool-badge">Airtable</span>
+          <span class="tool-badge">PDFMonkey</span>
+          <span class="tool-badge">Gmail</span>
+          <span class="tool-badge">Google Drive</span>
+          <span class="tool-badge">Calendly</span>
         </div>
       </div>
       <div class="pack-card">
@@ -233,11 +233,11 @@ footer a { color: var(--yellow); text-decoration: none; }
         <div class="pack-name">Pack Emails & Tri</div>
         <div class="pack-desc">Triez, classez et répondez à vos emails automatiquement. Plus aucun message important ne passe à la trappe.</div>
         <div class="pack-tools">
-          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
-          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
-          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
-          <img class="tool-logo" src="https://i.ibb.co/svcwn5bJ/Slack-noir.png" alt="Slack" title="Slack">
-          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
+          <span class="tool-badge">Make</span>
+          <span class="tool-badge">Gmail</span>
+          <span class="tool-badge">Airtable</span>
+          <span class="tool-badge">Slack</span>
+          <span class="tool-badge">Google Sheets</span>
         </div>
       </div>
       <div class="pack-card">
@@ -245,12 +245,12 @@ footer a { color: var(--yellow); text-decoration: none; }
         <div class="pack-name">Pack Back-Office</div>
         <div class="pack-desc">Centralisez vos emails, documents, formulaires et tâches administratives dans un système automatisé.</div>
         <div class="pack-tools">
-          <img class="tool-logo" src="https://i.ibb.co/prRVp08L/Make.png" alt="Make" title="Make">
-          <img class="tool-logo" src="https://i.ibb.co/FbCDjkS4/Gmail.png" alt="Gmail" title="Gmail">
-          <img class="tool-logo" src="https://i.ibb.co/NdMc07L1/Google-Drive.png" alt="Google Drive" title="Google Drive">
-          <img class="tool-logo" src="https://i.ibb.co/8DW89Fzv/Google-Sheets.png" alt="Google Sheets" title="Google Sheets">
-          <img class="tool-logo" src="https://i.ibb.co/n83dXsxt/Tally.png" alt="Tally" title="Tally">
-          <img class="tool-logo" src="https://i.ibb.co/TMrxzxWM/Airtable.png" alt="Airtable" title="Airtable">
+          <span class="tool-badge">Make</span>
+          <span class="tool-badge">Gmail</span>
+          <span class="tool-badge">Google Drive</span>
+          <span class="tool-badge">Google Sheets</span>
+          <span class="tool-badge">Tally</span>
+          <span class="tool-badge">Airtable</span>
         </div>
       </div>
       <div class="pack-card">
